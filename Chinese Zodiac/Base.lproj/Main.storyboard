@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chinese_Zodiac" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,39 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYH-uZ-DNc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3P8-Uc-f9y"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="十二生肖" id="138-KS-8Sw"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wKn-Ty-k9p">
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wKn-Ty-k9p" firstAttribute="leading" secondItem="SYH-uZ-DNc" secondAttribute="leading" id="EUk-vd-UvJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wKn-Ty-k9p" secondAttribute="bottom" id="KGT-AG-6Ja"/>
+                            <constraint firstItem="wKn-Ty-k9p" firstAttribute="top" secondItem="SYH-uZ-DNc" secondAttribute="bottom" id="NjR-Rr-gyh"/>
+                            <constraint firstItem="SYH-uZ-DNc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bGy-RZ-PNS"/>
+                            <constraint firstItem="SYH-uZ-DNc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mYA-pG-54x"/>
+                            <constraint firstItem="SYH-uZ-DNc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rZJ-Eb-fLy"/>
+                            <constraint firstItem="wKn-Ty-k9p" firstAttribute="trailing" secondItem="SYH-uZ-DNc" secondAttribute="trailing" id="xa3-cV-LFC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="wKn-Ty-k9p" id="FYZ-Zw-cnq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="240" y="357"/>
         </scene>
     </scenes>
 </document>
